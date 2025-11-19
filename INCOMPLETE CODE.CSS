@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        body{
+            background: linear-gradient(345deg, rgba(131, 58, 180, 1) 0%, rgba(191, 44, 115, 1) 45%, rgba(253, 29, 29, 1) 78%);
+            /* background-attachment: fixed; */
+            margin: 0;
+            padding: 0;
+        }
+
+        .value {
+            width: 100%;
+            height: 200px;
+            text-align: center;
+            border-collapse: collapse;
+            margin: auto;
+        }
+
+        th, td {
+            padding: 12px; 
+        }
+
+        .tr1 {
+            background-color: #169b9b;
+        }
+        
+        tr {
+            border: 1px solid black;
+            height: 100%;
+            background-color: rgba(0, 255, 221, 0.671);
+        }
+    </style>
+</head>
+<body>
+
+    <div></div>
+
+    <div class="value">
+        <table> 
+            <th>FIXED TABLE HEADER</th>
+
+            <tr class="tr1">
+                <td>COMPANYY</td>
+                <td>PRICE</td>
+                <td>CHANGE</td>
+                <td>CHANGE %</td>
+            </tr>
+
+            <tr>
+                <td>AUSTRALIAN COMPANY</td>
+                <td>$1.38</td>
+                <td>+2.01</td>
+                <td>-0.36%</td>
+            </tr>
+
+            <tr>
+                <td>AUSENCO</td>
+                <td>$2.38</td>
+                <td>-0.01</td>
+                <td>-1.36%</td>
+            </tr>
+
+            <tr>
+                <td>ADELAIDE</td>
+                <td>$3.22</td>
+                <td>+0.01</td>
+                <td>+1.36%</td>
+            </tr>
+
+            <tr>
+                <td>ADTIYA BIRLA</td>
+                <td>$1.02</td>
+                <td>-1.01</td>
+                <td>+2.36%</td>
+            </tr>
+
+            <tr>
+                <td>AUSTRALIAN COMPANY</td>
+                <td>$1.38</td>
+                <td>+2.01</td>
+                <td>-0.36%</td>
+            </tr>
+
+            <tr>
+                <td>AUSENCO</td>
+                <td>$2.38</td>
+                <td>-0.01</td>
+                <td>-1.36%</td>
+            </tr>
+        </table>
+    </div>
+
+</body>
+</html>
