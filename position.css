@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Position Boxes</title>
 
   <style>
     .value1 { 
-      position: fixed;   
+      position: relative;
       width: 100%;
       height: 600px;
       border: 1px solid black;
@@ -19,8 +19,9 @@
       height: 100px;
       background: lightblue;
       border: 1px solid black;
-      position: absolute;      
+      position: absolute;
       text-align: center;
+      padding-top: 7px;   
     }
 
     .top-left { top: 0; left: 0; }
@@ -29,11 +30,13 @@
     .bottom-right { bottom: 0; right: 0; }
 
     .middle-row {
-      top: 50%;
-      left: 220px;
-      width: 70%;
       position: fixed;
-      display: flex;
+      top: 40%;
+      width: 500px;
+      left: 0;
+      right: 0;
+      margin: auto;
+      padding: 5px 0;
     }
 
     .middle-box {
@@ -42,11 +45,15 @@
       background: lightgreen;
       border: 1px solid black;
       text-align: center;
-      padding: 10px;
+      padding-top: 7px;   
+      position: absolute;
     }
 
-    .bottom-left
-    
+    .m1 { left: 0; }
+    .m2 { left: 125px; }
+    .m3 { left: 250px; }
+    .m4 { left: 375px; }
+
   </style>
 </head>
 
@@ -60,10 +67,10 @@
     <div class="box bottom-right">Bottom Right</div>
    
     <div class="middle-row">
-      <div class="middle-box">M1</div>
-      <div class="middle-box">M2</div>
-      <div class="middle-box">M3</div>
-      <div class="middle-box">M4</div>
+      <div class="middle-box m1">M1</div>
+      <div class="middle-box m2">M2</div>
+      <div class="middle-box m3">M3</div>
+      <div class="middle-box m4">M4</div>
     </div>
 
   </div>
