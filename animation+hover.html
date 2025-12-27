@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Method 2</title>
+
+<style>
+.box{
+    width:70px;
+    height:70px;
+    background:rgb(192,243,7);
+    margin:20px 0;
+}
+
+.box:hover{
+    animation: move 2s infinite alternate;
+}
+
+.linear:hover{ animation-timing-function: linear; }
+.ease:hover{ animation-timing-function: ease; }
+.ease-in:hover{ animation-timing-function: ease-in; }
+.ease-out:hover{ animation-timing-function: ease-out; }
+.ease-in-out:hover{ animation-timing-function: ease-in-out; }
+.steps:hover{ animation-timing-function: steps(10); }
+
+@keyframes move{
+    from{ 
+        transform: translateX(0); 
+    }
+    to{ 
+        transform: translateX(500px);
+    }
+}
+</style>
+</head>
+
+<body>
+<div>Linear</div>
+<div class="box linear"></div>
+
+<div>Ease</div>
+<div class="box ease"></div>
+
+<div>Ease-In</div>
+<div class="box ease-in"></div>
+
+<div>Ease-Out</div>
+<div class="box ease-out"></div>
+
+<div>Ease-In-Out</div>
+<div class="box ease-in-out"></div>
+
+<div>Steps</div>
+<div class="box steps"></div>
+</body>
+</html>
