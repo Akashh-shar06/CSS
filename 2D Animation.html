@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSS 2D Transform Hover Effects</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #f5f5f5;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .box {
+    width: 150px;
+    height: 100px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px auto;
+    font-weight: bold;
+    border-radius: 8px;
+    background-color: gray;
+    transition: transform 0.5s ease;
+    cursor: pointer;
+  }
+
+  .description {
+    text-align: center;
+    font-size: 14px;
+    margin-top: -15px;
+    margin-bottom: 30px;
+    color: #333;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .translate-box { background-color: lightcoral; }
+  .translate-box:hover { transform: translate(100px, 50px); }
+
+  .rotate-box { background-color: lightblue; }
+  .rotate-box:hover { transform: rotate(360deg); }
+
+  .scalex-box { background-color: lightgreen; }
+  .scalex-box:hover { transform: scaleX(3); }
+
+  .scaley-box { background-color: orange; }
+  .scaley-box:hover { transform: scaleY(5); }
+
+  .scale-box { background-color: purple; }
+  .scale-box:hover { transform: scale(1); }
+
+  .skewx-box { background-color: pink; }
+  .skewx-box:hover { transform: skewX(45deg); }
+
+  .skewy-box { background-color: lightgray; color: black; }
+  .skewy-box:hover { transform: skewY(20deg); }
+
+  .skew-box { background-color: teal; }
+  .skew-box:hover { transform: skew(20deg, 10deg); }
+
+  .matrix-box { background-color: navy; }
+  .matrix-box:hover { transform: matrix(1, 0.5, -0.5, 1, 50, 30); }
+</style>
+</head>
+<body>
+
+<h1>CSS 2D Transform Hover Examples</h1>
+
+<div class="box translate-box">Translate</div>
+<div class="description">Moves the element along X and Y axes: <strong>translate(50px, 30px)</strong></div>
+
+<div class="box rotate-box">Rotate</div>
+<div class="description">Rotates the element clockwise: <strong>rotate(45deg)</strong></div>
+
+<div class="box scalex-box">ScaleX</div>
+<div class="description">Scales the element horizontally: <strong>scaleX(1.5)</strong></div>
+
+<div class="box scaley-box">ScaleY</div>
+<div class="description">Scales the element vertically: <strong>scaleY(2)</strong></div>
+
+<div class="box scale-box">Scale</div>
+<div class="description">Scales the element in both directions: <strong>scale(1.5)</strong></div>
+
+<div class="box skewx-box">SkewX</div>
+<div class="description">Skews the element along X axis: <strong>skewX(20deg)</strong></div>
+
+<div class="box skewy-box">SkewY</div>
+<div class="description">Skews the element along Y axis: <strong>skewY(20deg)</strong></div>
+
+<div class="box skew-box">Skew XY</div>
+<div class="description">Skews the element along both axes: <strong>skew(20deg, 10deg)</strong></div>
+
+<div class="box matrix-box">Matrix</div>
+<div class="description">
+Matrix combines multiple transforms: <strong>matrix(a, b, c, d, tx, ty)</strong> <br>
+Example: <strong>matrix(1, 0.5, -0.5, 1, 50, 30)</strong>
+</div>
+
+</body>
+</html>
