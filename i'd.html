@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Protected Video</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #videoContainer {
+            display: none;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="#" onclick="checkLogin()">Click here to watch video</a>
+
+    <div id="videoContainer">
+        <iframe width="360" height="640"
+            src="https://www.youtube.com/embed/IxPYKe2BHeI"
+            frameborder="0"
+            allowfullscreen>
+        </iframe>
+    </div>
+
+    <script>
+        function checkLogin() {
+            const correctId = "admin";
+            const correctPassword = "1234";
+
+            const userId = prompt("Enter ID:");
+            const userPassword = prompt("Enter Password:");
+
+            if (userId === correctId && userPassword === correctPassword) {
+                document.getElementById("videoContainer").style.display = "block";
+            } else {
+                alert("Wrong ID or Password!");
+            }
+        }
+    </script>
+
+</body>
+</html>
