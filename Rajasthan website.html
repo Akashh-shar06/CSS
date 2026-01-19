@@ -1,96 +1,418 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Rajasthan Portal</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+    <style>
+        * {
+            box-sizing: border-box
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .custom-navbar {
+            background: #f5f5f5;
+        }
+
+        .custom-navbar .btn {
+            color: #000;
+        }
+
+        .cm-text {
+            color: #000;
+        }
+
+        .carousel,
+        .carousel-inner,
+        .carousel-item {
+            height: 100vh;
+        }
+
+        .carousel-item img {
+            height: 100vh;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .section-title,
+        .Festival-Section,
+        .Tourist-Section {
+            font-size: 32px;
+            font-weight: 700;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 50px;
+        }
+
+        .section-title span,
+        .Festival-Section span,
+        .Tourist-Section span {
+            color: #e91e63;
+            font-size: 36px;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+            margin-bottom: 70px;
+        }
+
+        .info-row-center {
+            grid-column: 1/-1;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+        }
+
+        .info-card {
+            width: 260px;
+            background: #f2f2f2;
+            border-radius: 18px;
+            padding: 22px;
+            position: relative;
+            box-shadow: 0 10px 0 #233f8f;
+        }
+
+        .info-card .dot {
+            width: 26px;
+            height: 26px;
+            position: absolute;
+            top: -13px;
+            left: 30px;
+            transform: rotate(45deg);
+        }
+
+        .dot.pink {
+            background: #e91e63;
+        }
+
+        .dot.yellow {
+            background: #f4b400;
+        }
+
+        .info-card p {
+            margin: 0;
+            font-size: 18px;
+        }
+
+        .service-section {
+            display: flex;
+            justify-content: center;
+            padding-bottom: 80px;
+        }
+
+        .service-grid {
+            max-width: 1200px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .service-card {
+            height: 170px;
+            border-radius: 22px;
+            color: #fff;
+            padding: 22px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            font-size: 20px;
+        }
+
+        .service-1 {
+            background: linear-gradient(135deg, #2c1b0f, #5a3a20);
+        }
+
+        .service-2 {
+            background: linear-gradient(135deg, #5c5c5c, #8a8a8a);
+        }
+
+        .service-3 {
+            background: linear-gradient(135deg, #b7a6ff, #7d6df2);
+        }
+
+        .service-4 {
+            background: linear-gradient(135deg, #ff3b6f, #e91e63);
+        }
+
+        .arrow {
+            width: 38px;
+            height: 38px;
+            border: 2px solid #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @media(max-width:992px) {
+            .info-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .info-row-center {
+                flex-wrap: wrap;
+            }
+        }
+
+        @media(max-width:576px) {
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container-fluid">
 
-    <a class="navbar-brand" href="">
-      <img src="logo1.jpg" alt="image" height="100px" width="300px">
-    </a>
+    <nav class="navbar navbar-expand-lg navbar-light custom-navbar">
+        <div class="container-fluid">
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+            <a class="navbar-brand" href="#">
+                <img src="raj-logo.jpg" height="90">
+            </a>
 
-    <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item dropdown">
+            <div class="collapse navbar-collapse" id="nav">
+                <ul class="navbar-nav ms-auto gap-2">
 
-          <button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown">
-            Government
-          </button>
-          <ul class="dropdown-menu dropdown-menu-dark">
-            <li><a class="dropdown-item" href="">Governer</a></li>
-            <li><a class="dropdown-item" href="">Cheif Minister</a></li>
-            <li><a class="dropdown-item" href="">Deputy Cheif Minister</a></li>
-            <li><a class="dropdown-item" href="">Cabinet Minister</a></li>
-            <li><a class="dropdown-item" href="">State Minister (Independent Chagre)</a></li>
-          </ul>
+                    <li class="nav-item dropdown">
+                        <button class="btn dropdown-toggle" data-bs-toggle="dropdown">Government</button>
+                        <ul class="dropdown-menu dropdown-menu-dark">
+                            <li><a class="dropdown-item"
+                                    href="https://rajasthan.gov.in/pages/sm/department-page/142643/866">Governor</a>
+                            </li>
+                            <li><a class="dropdown-item"
+                                    href="https://rajasthan.gov.in/pages/sm/department-page/142677/876">Chief
+                                    Minister</a></li>
+                            <li><a class="dropdown-item"
+                                    href="https://rajasthan.gov.in/pages/sm/department-page/371534/2402">Deputy Chief
+                                    Minister</a></li>
+                            <li><a class="dropdown-item"
+                                    href="https://rajasthan.gov.in/pages/sm/assembly-constituency/354894/0/1">Cabinet
+                                    Minister</a></li>
+                            <li><a class="dropdown-item"
+                                    href="https://rajasthan.gov.in/pages/sm/assembly-constituency/372005/0/457">State
+                                    Minister</a></li>
+                        </ul>
+                    </li>
 
-          <button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown">
-            Sectors
-          </button>
-          <ul class="dropdown-menu dropdown-menu-dark">
-            <li><a class="dropdown-item" href="">Business</a></li>
-            <li><a class="dropdown-item" href="">Education</a></li>
-            <li><a class="dropdown-item" href="">Employment</a></li>
-          </ul>
+                    <li class="nav-item dropdown">
+                        <button class="btn dropdown-toggle" data-bs-toggle="dropdown">Sectors</button>
+                        <ul class="dropdown-menu dropdown-menu-dark">
+                            <li><a class="dropdown-item" href="">Education</a></li>
+                            <li><a class="dropdown-item" href="">Health</a></li>
+                            <li><a class="dropdown-item" href="">Tourism</a></li>
+                        </ul>
+                    </li>
 
-          <button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown">
-            Residents
-          </button>
-          <ul class="dropdown-menu dropdown-menu-dark">
-            <li><a class="dropdown-item" href="">Citizen & Community</a></li>
-            <li><a class="dropdown-item" href="">Health and Social Service</a></li>
-            <li><a class="dropdown-item" href="">Just For Youth</a></li>
-            <li><a class="dropdown-item" href="#">Senoir Citizen</a></li>
-          </ul>
+                    <li class="nav-item dropdown">
+                        <button class="btn dropdown-toggle" data-bs-toggle="dropdown">Residents</button>
+                        <ul class="dropdown-menu dropdown-menu-dark">
+                            <li><a class="dropdown-item"
+                                    href="https://rajasthan.gov.in/sm/order/activity-grid/149101/409/41/2934">Citizen &
+                                    Community</a></li>
+                            <li><a class="dropdown-item"
+                                    href="https://rajasthan.gov.in/sm/order/activity-grid/149103/409/41/2935">Health and
+                                    Social Services</a></li>
+                            <li><a class="dropdown-item"
+                                    href="https://rajasthan.gov.in/sm/order/activity-grid/149104/409/41/2936">Just For
+                                    Youth</a></li>
+                        </ul>
+                    </li>
 
-          <button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown">
-            Visiting
-          </button>
-          <ul class="dropdown-menu dropdown-menu-dark">
-            <li><a class="dropdown-item" href="">Car & Transportation</a></li>
-            <li><a class="dropdown-item" href="">Newcomers Guide</a></li>
-            <li><a class="dropdown-item" href="">Tourist Places</a></li>
-            <li><a class="dropdown-item" href="">Travel & Tourism</a></li>
-            <li><a class="dropdown-item" href="">3D Model Videos</a></li>
-          </ul>
+                    <li class="nav-item dropdown">
+                        <button class="btn dropdown-toggle" data-bs-toggle="dropdown">Visiting</button>
+                        <ul class="dropdown-menu dropdown-menu-dark">
+                            <li><a class="dropdown-item"
+                                    href="https://rajasthan.gov.in/pages/sm/department-page/149115/924">NewComer Guide
+                                </a></li>
+                            <li><a class="dropdown-item"
+                                    href="https://rajasthan.gov.in/pages/sm/gen-entry/subcategory-wise-count/149116/0/29">Tourist
+                                    Places</a></li>
+                            <li><a class="dropdown-item"
+                                    href="https://rajasthan.gov.in/pages/sm/department-page/149119/928">3D model Videos
+                                </a></li>
+                        </ul>
+                    </li>
 
-          <button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown">
-            About Rajasthan
-          </button>
-          <ul class="dropdown-menu dropdown-menu-dark">
-            <li><a class="dropdown-item" href="">Art , Culture & Lifestyle</a></li>
-            <li><a class="dropdown-item" href="">Demographics & Statistics</a></li>
-            <li><a class="dropdown-item" href="">Rajasthan History</a></li>
-            <li><a class="dropdown-item" href="">Land & Environment</a></li>
-          </ul>
+                    <li class="nav-item dropdown">
+                        <button class="btn dropdown-toggle" data-bs-toggle="dropdown">Abour Rajasthan</button>
+                        <ul class="dropdown-menu dropdown-menu-dark">
+                            <li><a class="dropdown-item"
+                                    href="https://rajasthan.gov.in/pages/sm/department-page/149122/931">Land &
+                                    Environment</a></li>
+                            <li><a class="dropdown-item"
+                                    href="https://rajasthan.gov.in/pages/sm/department-page/149123/932">Rajasthan
+                                    History</a></li>
+                            <li><a class="dropdown-item"
+                                    href="https://rajasthan.gov.in/pages/sm/district-info-detail/354923/0/53">Wildlife</a>
+                            </li>
+                        </ul>
+                    </li>
 
-        </li>
-      </ul>
+                </ul>
 
-      <div class="ms-3 text-center text-white">
-        <img src="CM Photo.jpg" alt="profile" width="50px" height="50px" class="mb-1">
-        <div class="fw-bold">Shri Bhajanlal Sharma </div>
-        <div class="small">Hon'ble Chief Minister</div>
-      </div>
+                <div class="ms-4 text-center cm-text">
+                    <img src="CM image.jpg" width="50" height="50" class="rounded-circle mb-1">
+                    <div class="fw-bold">Shri Bhajanlal Sharma</div>
+                    <div class="small">Hon'ble Chief Minister</div>
+                </div>
+            </div>
+        </div>
+    </nav>
 
+    <div class="carousel slide carousel-fade">
+        <div class="carousel-inner">
+            <div class="carousel-item active"><img src="Slide 1.jpg"></div>
+            <div class="carousel-item"><img src="Slide2.jpg"></div>
+            <div class="carousel-item"><img src="Slide3.jpg"></div>
+        </div>
     </div>
-  </div>
-</nav>
-</body>
-</html>
 
-https://rajasthan.gov.in/
-https://getbootstrap.com/
+    <div class="container py-5">
+        <div class="section-title"><span>✿</span> Rajasthan at a Glance</div>
+
+        <div class="info-grid">
+            <div class="info-card">
+                <div class="dot pink"></div>
+                <p>Capital: <b>Jaipur</b></p>
+            </div>
+            <div class="info-card">
+                <div class="dot yellow"></div>
+                <p>Largest City: <b>Jaipur</b></p>
+            </div>
+            <div class="info-card">
+                <div class="dot pink"></div>
+                <p>Districts: <b>41</b></p>
+            </div>
+            <div class="info-card">
+                <div class="dot yellow"></div>
+                <p>Total Area: <b>3,42,239 Sq.Kms</b></p>
+            </div>
+
+            <div class="info-row-center">
+                <div class="info-card">
+                    <div class="dot pink"></div>
+                    <p>North Latitude: <b>23°03′ – 30°12′</b></p>
+                </div>
+                <div class="info-card">
+                    <div class="dot yellow"></div>
+                    <p>East Longitude: <b>69°30′ – 78°17′</b></p>
+                </div>
+                <div class="info-card">
+                    <div class="dot pink"></div>
+                    <p>Population: <b>6,85,48,437</b></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="service-section">
+        <div class="service-grid">
+            <div class="service-card service-1">Rajasthan Sampark<div class="arrow">↗</div>
+            </div>
+            <div class="service-card service-2">Verification<div class="arrow">↗</div>
+            </div>
+            <div class="service-card service-3">Calendar<div class="arrow">↗</div>
+            </div>
+            <div class="service-card service-4">Tender<div class="arrow">↗</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="Festival-Section"><span>✿</span> Fair & Festival</div>
+
+    <div class="container pb-5">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+
+            <div class="col">
+                <div class="card h-100">
+                    <img src="Festival of alwar.jpg" class="card-img-top">
+                    <div class="card-body">
+                        <h5><b>Festivals of Alwar</b></h5>
+                        <p>Alwar celebrates a number of festivals reflecting its rich culture and heritage.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100">
+                    <img src="SHEOGANJ.jpg" class="card-img-top">
+                    <div class="card-body">
+                        <h5><b>SHEOGANJ</b></h5>
+                        <p>Gautam Ji Chautila Hill Fair celebrated by the Meena community.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100">
+                    <img src="rameshwar Ghat.jpg" class="card-img-top">
+                    <div class="card-body">
+                        <h5><b>Rameshwar Ghat Fair</b></h5>
+                        <p>Located at the confluence of the Banas and Chambal rivers.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="Tourist-Section"><span>✿</span> Tourist Places</div>
+
+    <div class="container pb-5">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+
+            <div class="col">
+                <div class="card h-100">
+                    <img src="NAHARGARH BIOLOGICAL PARK.jpg" class="card-img-top">
+                    <div class="card-body">
+                        <h5><b>NAHARGARH BIOLOGICAL PARK</b></h5>
+                        <p>Located near Jaipur, famous for wildlife and nature.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100">
+                    <img src="Amreshwar Mahadev.jpg" class="card-img-top">
+                    <div class="card-body">
+                        <h5><b>AMERSHWAR MAHADEV</b></h5>
+                        <p>Ancient Shiva temple surrounded by hills near Sawai Madhopur.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100">
+                    <img src="NAKKI LAKE.jpg" class="card-img-top">
+                    <div class="card-body">
+                        <h5><b>NAKKI LAKE</b></h5>
+                        <p>India’s first man-made lake located in Mount Abu.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>
